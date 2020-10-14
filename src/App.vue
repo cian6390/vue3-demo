@@ -13,6 +13,9 @@
       <li>
         <router-link to="/watch-effect">watchEffect</router-link>
       </li>
+      <li>
+        <router-link to="/setup">setup</router-link>
+      </li>
     </ul>
   </aside>
   <main style="padding-left:30px;">
