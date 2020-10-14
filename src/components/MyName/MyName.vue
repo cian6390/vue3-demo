@@ -10,10 +10,13 @@
   <div>
     <strong class="mr-15">Fullname：{{ fullname }}</strong>
   </div>
+  <div>
+    <span class="mr-15">Type {{ counter }} times.</span>
+  </div>
 </template>
 
 <script>
-import { reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 
 export default {
   name: "MyName",
@@ -24,14 +27,40 @@ export default {
       lastName: "",
     });
 
+    const counter = ref(0);
+
+    // immutable computed
     const fullname = computed(() => {
       return user.firstName + " " + user.lastName;
     });
 
-    return { user, fullname };
+    // writable computed
+    // const fullname = computed({
+    //   get: () => {
+    //     return user.firstName + " " + user.lastName;
+    //   },
+    //   set: (value) => {
+    //     // ...
+    //   }
+    // });
+
+    watch(fullname, (currValue, prevValue) => {
+      console.log(`current: ${currValue}, prev: ${prevValue}`)
+      counter.value += 1;
+    });
+
+    // watch([fooRef, barRef], ([foo, bar], [prevFoo, prevBar]) => {
+    //     // do something ...
+    // })
+
+    // watch(
+    //   () => state.count,
+    //   (count, prevCount) => {
+    //     // do something ...
+    //   }
+    // );
+
+    return { user, fullname, counter };
   },
 };
 </script>
-
-<style>
-</style>

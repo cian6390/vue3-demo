@@ -31,10 +31,10 @@ import MyStore from './components/MyStore/MyStore.vue'
 export default {
   name: "App",
   components: {
-    MyModel,
-    MyInput,
-    MyName,
-    MyStore
+    MyModel,  // custom v-model
+    MyInput,  // mounted, unmounted, useEffect
+    MyName,   // compute, watch
+    MyStore   // vuex
   },
   data() {
     return {
