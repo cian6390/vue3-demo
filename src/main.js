@@ -1,14 +1,12 @@
-import { $bus } from './event-bus'
 import { createApp } from 'vue'
-import App from './App.vue'
 import { store } from './store'
+import { router } from './router'
+import { $bus } from './event-bus'
+import App from './App.vue'
 
-$bus.on('my-global-event', function (payload) {
-  console.log(payload)
-})
+$bus.on('my-global-event', msg => console.log(msg))
 
-const app = createApp(App)
-
-app.use(store)
-
-app.mount('#app')
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app')

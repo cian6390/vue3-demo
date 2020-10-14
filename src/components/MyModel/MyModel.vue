@@ -1,6 +1,7 @@
 <template>
   <div class="mb-15">
     <button @click="increase">increase</button>
+    <span class="mr-15"></span>
     <button @click="decrease">decrease</button>
   </div>
   <div>{{ number }}</div>
