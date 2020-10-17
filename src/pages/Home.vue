@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding-bottom: 60px;">
     <div>
       <h2>Lifecycle</h2>
       <img width="600" src="https://v3.vuejs.org/images/lifecycle.png" alt="vue3 Lifecycle Diagram" />
@@ -24,11 +24,19 @@
         <li>Vue.observable</li>
       </ul>
     </div>
+    <div>
+      <h2>MyInput</h2>
+      <my-input></my-input>
+    </div>
   </div>
 </template>
 
 <script>
+import MyInput from '../components/MyInput/MyInput.vue'
 export default {
   name: "Home",
+  components: {
+    MyInput
+  }
 };
 </script>

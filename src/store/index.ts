@@ -1,6 +1,10 @@
 import { createStore } from 'vuex'
 
-export const store = createStore({
+export interface RootState {
+    msg: string
+}
+
+export const store = createStore<RootState>({
     state() {
         return {
             msg: 'Hello Vue 3'

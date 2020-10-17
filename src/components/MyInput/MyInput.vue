@@ -2,7 +2,7 @@
   <input v-model="q" type="text" />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { useInput } from "./my-input";
 export default defineComponent(function MyInput() {
