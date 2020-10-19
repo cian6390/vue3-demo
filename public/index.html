@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/todomvc-app-css@2.2.0/index.css" />
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        min-height: 100%;
-        box-sizing: border-box;
+      body {
+        max-width: 960px !important;
       }
       .mr-15 {
         margin-right: 15px;
       }
       .mb-15 {
         margin-bottom: 15px;
+      }
+      [v-cloak] {
+        display: none;
       }
     </style>
   </head>

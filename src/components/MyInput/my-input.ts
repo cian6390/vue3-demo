@@ -3,9 +3,9 @@ import { ref, watchEffect, onUnmounted, onMounted } from "vue";
 import { Subject, Subscription } from "rxjs";
 import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 
-export const useInput = function () {
+export const useInput = function (initialValue: string = '', callback: (v: string) => void) {
 
-    const q = ref("");
+    const q = ref(initialValue);
 
     let subscription: Subscription;
 
@@ -23,13 +23,10 @@ export const useInput = function () {
     onMounted(() => {
         console.info("subscribe");
 
-        subscription = input$.subscribe((v) => {
-            console.log("send require with q: " + v);
-        });
+        subscription = input$.subscribe(callback);
     });
 
     onUnmounted(() => {
-        console.info("unsubscribe");
         subscription.unsubscribe();
     });
 

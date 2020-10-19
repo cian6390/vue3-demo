@@ -11,10 +11,16 @@
         <router-link to="/compute-and-watch">Compute & Watch</router-link>
       </li>
       <li>
+        <router-link to="/setup">setup</router-link>
+      </li>
+      <li>
         <router-link to="/watch-effect">watchEffect</router-link>
       </li>
       <li>
-        <router-link to="/setup">setup</router-link>
+        <router-link to="/input-example">InputExample</router-link>
+      </li>
+      <li>
+        <router-link to="/todo-example">TodoExample</router-link>
       </li>
     </ul>
   </aside>
@@ -48,7 +54,7 @@ aside {
   text-align: left;
 }
 
-li {
+aside li {
   height: 30px;
 }
 

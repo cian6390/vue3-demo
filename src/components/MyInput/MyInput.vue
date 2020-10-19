@@ -6,7 +6,13 @@
 import { defineComponent } from "vue";
 import { useInput } from "./my-input";
 export default defineComponent(function MyInput() {
-  const { q } = useInput();
-  return { q };
+
+  const { q } = useInput('', function (v) {
+    console.log('input change: ' + v)
+  });
+
+  return {
+    q
+   };
 });
 </script>

@@ -24,19 +24,11 @@
         <li>Vue.observable</li>
       </ul>
     </div>
-    <div>
-      <h2>MyInput</h2>
-      <my-input></my-input>
-    </div>
   </div>
 </template>
 
 <script>
-import MyInput from '../components/MyInput/MyInput.vue'
 export default {
-  name: "Home",
-  components: {
-    MyInput
-  }
+  name: "Home"
 };
 </script>
