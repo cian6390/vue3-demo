@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import MyTodo from '../components/MyTodo/MyTodo.vue'
+import MyTodo from '../components/MyTodo/V3Todo.vue'
 
 export default defineComponent({
     name: 'TodoExample',
@@ -16,7 +16,3 @@ export default defineComponent({
     }
 })
 </script>
-
-<style>
-
-</style>

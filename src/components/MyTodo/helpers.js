@@ -3,7 +3,12 @@ export const STORAGE_KEY = "todos-vuejs-2.0";
 
 export const todoStorage = {
     fetch: function () {
-        var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        console.log(localStorage.getItem(STORAGE_KEY))
+        var todos = localStorage.getItem(STORAGE_KEY)
+        if (!todos || todos === 'undefined') {
+            todos = '[]'
+        }
+        todos = JSON.parse(todos);
         todos.forEach(function (todo, index) {
             todo.id = index;
         });
