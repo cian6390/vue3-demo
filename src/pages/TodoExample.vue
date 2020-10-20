@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import MyTodo from '../components/MyTodo/V3Todo.vue'
+import MyTodo from '../components/MyTodo/MyTodo.vue'
 
 export default defineComponent({
     name: 'TodoExample',

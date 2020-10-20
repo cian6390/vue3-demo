@@ -45,13 +45,13 @@
       </span>
       <ul class="filters">
         <li>
-          <a href="#/all" :class="{ selected: visibility == 'all' }">All</a>
+          <a @click.prevent="setVisibility('all')" href="#" :class="{ selected: visibility == 'all' }">All</a>
         </li>
         <li>
-          <a href="#/active" :class="{ selected: visibility == 'active' }">Active</a>
+          <a @click.prevent="setVisibility('active')" href="#" :class="{ selected: visibility == 'active' }">Active</a>
         </li>
         <li>
-          <a href="#/completed" :class="{ selected: visibility == 'completed' }">Completed</a>
+          <a @click.prevent="setVisibility('completed')" href="#" :class="{ selected: visibility == 'completed' }">Completed</a>
         </li>
       </ul>
       <button
@@ -155,6 +155,10 @@ export default {
     removeCompleted: function () {
       this.todos = filters.active(this.todos);
     },
+
+    setVisibility: function (visibility) {
+        this.visibility = visibility;
+    }
   },
 
   // a custom directive to wait for the DOM to be updated
